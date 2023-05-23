@@ -21,6 +21,10 @@ function [q_in, q_out, dydt_pLine, pLsoln] = ...
 % pipelinePi_uFric.m
 % pipelineNPi_uFric.m
 % pipelineMOC.m
+%     mocSimple.m
+%     mocDGCM.m
+%     mocSimple_uFric.m
+%     mocDGCM_uFric.m
 %
 % UPDATES:
 % 03/29/2021 - created.

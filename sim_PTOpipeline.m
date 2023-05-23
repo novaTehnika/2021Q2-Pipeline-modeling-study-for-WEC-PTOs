@@ -23,7 +23,7 @@ function out = sim_PTOpipeline(par,getTDdata)
 % load pressure. (OR maybe just a specified load resistance)
 %
 % FILE DEPENDENCY:
-% sysPTOwPL.m
+% sys_PTOpipeline.m
 % nonStateVarsPTOwPL
 %   pumpFlow.m
 % pipeline
@@ -34,7 +34,11 @@ function out = sim_PTOpipeline(par,getTDdata)
 %   pipelineMOC.m
 %     mocSimple.m
 %     mocDGCM.m
+%     mocSimple_uFric.m
+%     mocDGCM_uFric.m
 %   pLmodelParamSetup
+% statsTimeVar
+% statsTimeVar_cdf
 % 
 %
 % UPDATES:
@@ -332,18 +336,17 @@ clear pumpFlow pipeline pipelineMOC
     VbalHP = VnetHP - deltaVgHP;
 
     %% Pressure and rate of change in pressure metrics
-    p_loutDist = statsTimeVar_V01x00(t,p_lout);   
-    p_hinDist = statsTimeVar_V01x00(t,p_hin);   
-    p_houtDist = statsTimeVar_V01x00(t,p_hout);   
-    dp_loutdtDist = statsTimeVar_cdf_V01x00(t,abs(dp_loutdt));   
-    dp_hindtDist = statsTimeVar_cdf_V01x00(t,abs(dp_hindt));   
-    dp_houtdtDist = statsTimeVar_cdf_V01x00(t,abs(dp_houtdt));   
+    p_loutDist = statsTimeVar(t,p_lout);
+    p_hinDist = statsTimeVar(t,p_hin);
+    p_houtDist = statsTimeVar(t,p_hout);
+    dp_loutdtDist = statsTimeVar_cdf(t,abs(dp_loutdt));
+    dp_hindtDist = statsTimeVar_cdf(t,abs(dp_hindt));
+    dp_houtdtDist = statsTimeVar_cdf(t,abs(dp_houtdt));
     
-
     %% Torque
     deltap_wec = p_hout-p_lout;
 
-    deltap_wecDist = statsTimeVar_V01x00(t,deltap_wec);          
+    deltap_wecDist = statsTimeVar(t,deltap_wec);
 
 %% %%%%%%%%%%%%   FUNCTION OUTPUTS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 out.PPmean_LP_fric = PPmean_LP_fric;

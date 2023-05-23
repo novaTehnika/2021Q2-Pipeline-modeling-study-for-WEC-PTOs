@@ -92,7 +92,7 @@ for i = 1:nVar1
                                                       % for user monitoring
                                                       
         rng(2); % set the seed for the random number generator
-        parSim = parameters_PTOpipeline(par,designCase,designSubCase,pLmodel(i));
+        parSim = parameters_PTOpipelineStudy(par,designCase,designSubCase,pLmodel(i));
         
         switch designCase
             case 5 % switching at the pump
