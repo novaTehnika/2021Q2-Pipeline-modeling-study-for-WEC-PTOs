@@ -58,23 +58,23 @@ function [q_in, q_out, dydt_pLine, pLsoln] = ...
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelineRturb(t,y,p_in,p_out,par,lineID,postProcess);
 
-        case {3 4} % medium line model with laminar and turbulent friction
+        case {3 4} % medium line model
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelinePi(t,y,p_in,p_out,par,lineID,postProcess);
 
-        case 5 % long line model, n pi-lumps
+        case 5 % long line model (n pi-lumps)
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelineNPi(t,y,p_in,p_out,par,lineID,postProcess);
         
-        case 8 % medium line model with laminar and turbulent friction
+        case 8 % medium line model with unsteady friction
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelinePi_uFric(t,y,p_in,p_out,par,lineID,postProcess);
         
-        case 9 % long line model, n pi-lumps
+        case 9 % long line model (n pi-lumps) with unsteady
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelineNPi_uFric(t,y,p_in,p_out,par,lineID,postProcess);
 
-        case {6 7 10 11} % MOC models
+        case {6 7 10 11} % MOC models with and without unsteady friction
             [q_in, q_out, dydt_pLine, pLsoln] = ...
             pipelineMOC(t,y,p_in,p_out,par,lineID,postProcess);
         

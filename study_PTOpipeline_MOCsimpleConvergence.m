@@ -8,7 +8,11 @@
 % 03/29/2021
 %
 % PURPOSE/DESCRIPTION:
-% This script 
+% This script executes simulations for a specified design case (a 
+% selection of system parameters specified in parameters_PTOpipelinStudy.m)  
+% using the simple, fixed wave length, constant parameter Method of 
+% Characteristics pipeline model. The grid spacing is varied for the 
+% purpose of testing convergence.
 %
 % FILE DEPENDENCY:
 % sim_PTOpipeline.m

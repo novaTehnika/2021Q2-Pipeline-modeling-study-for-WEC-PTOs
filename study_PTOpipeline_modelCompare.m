@@ -8,7 +8,36 @@
 % 03/29/2021
 %
 % PURPOSE/DESCRIPTION:
-% This script 
+% This script executes simulations for a specified design case (a selection
+% of system parameters specified in parameters_PTOpipelinStudy.m) using 
+% several pipeline model for the purpose of comparing the relative 
+% agreement of these models.
+%
+% Selection of pipeline models to choose from:
+% 1 - Lumped resistance using laminar friction
+% 2 - Lumped resistance including turbulent 
+%     friction
+% 3 - Single Pi-lump resistance and inertance with
+%     low inertance to spoof model 2. Same results 
+%     but faster.
+% 4 - Single Pi-lump resistance and inertance
+% 5 - N Pi-lumps, multi-segments, resistance,
+%     inertance, and capacitance
+% 6 - Method of characteristics based solution 
+%     assuming constant wave speed
+% 7 - Method of characteristics based Discrete 
+%     free-gas cavity model (DGCM)
+% 8 - Single Pi-lump resistance and inertance, with
+%     unsteady friction
+% 9 - N Pi-lumps, multi-segments, resistance,
+%     inertance, and capacitance, with unsteady
+%     friction
+% 10- Method of characteristics based solution 
+%     assuming constant wave speed, with unsteady
+%     friction
+% 11- Method of characteristics based Descrete 
+%     free-gas cavity model (DGCM, with unsteady
+%     friction
 %
 % FILE DEPENDENCY:
 % sim_PTOpipeline.m
