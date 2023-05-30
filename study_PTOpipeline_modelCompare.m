@@ -89,10 +89,10 @@ rng(2); % set the seed for the random number generator
 
 
 % specify simualtion parameters
-designCase = 4;
-designSubCase = 3;
+designCase = 1;
+designSubCase = 1;
 
-pLmodel = [3 4 5 6 7];
+pLmodel = [3 4 5 6 7 8 9 10 11];
 nVar = length(pLmodel);
 
 for i = 1:nVar
@@ -100,7 +100,7 @@ for i = 1:nVar
     disp([num2str(i),' of ',num2str(nVar)]) % output to console 
                                             % for user monitoring
                                             
-    par = parameters_PTOpipeline(par,designCase,designSubCase,pLmodel(i));
+    par = parameters_PTOpipelineStudy(par,designCase,designSubCase,pLmodel(i));
 
     % run simulation
     tic
